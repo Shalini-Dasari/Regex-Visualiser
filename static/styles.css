@@ -1,0 +1,229 @@
+/* Reset & Defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Body Default (Light) */
+body {
+  height: 100vh;
+  background: linear-gradient(rgb(246, 245, 242));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Theme Overrides */
+body.dark-theme {
+  background: #121212;
+  color: #ffffff;
+}
+
+body.dark-theme .card-box {
+  background-color: rgba(40, 40, 40, 0.85);
+}
+
+body.dark-theme input[type="text"] {
+  background-color: #1e1e1e;
+  border: 1px solid #666;
+  color: white;
+}
+
+body.dark-theme button {
+  background-color: #2c2c2c;
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Theme Toggle */
+#theme-toggle-btn {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+#theme-toggle-btn:hover {
+  transform: rotate(30deg);
+}
+
+/* Nav Button */
+.nav-btn {
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #357ABD;
+}
+
+/* Center Box */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.card-box {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-box:hover {
+  transform: translateY(-2px);
+}
+
+/* Title */
+.title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: inherit;
+}
+
+/* Input Field */
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+  outline: none;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4A90E2;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #357ABD;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Extra Buttons */
+#extra-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+#extra-buttons button {
+  flex: 1;
+}
+
+#extra-buttons.hidden, 
+#railroad-container.hidden,
+#parse-tree-container.hidden {
+  display: none;
+}
+
+/* Result Message */
+#result-message {
+  margin-top: 10px;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+#railroad-container, #parse-tree-container {
+  margin-top: 20px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease;
+}
+
+body.dark-theme #railroad-container,
+body.dark-theme #parse-tree-container {
+  background-color: rgba(60, 60, 60, 0.5);
+}
+
+#diagram-area, #parse-tree-area {
+  overflow-x: auto;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ddd;
+  min-height: 100px;
+}
+
+body.dark-theme #diagram-area, 
+body.dark-theme #parse-tree-area {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #444;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .card-box {
+    width: 95%;
+    padding: 30px 20px;
+  }
+  
+  .title {
+    font-size: 26px;
+  }
+  
+  #extra-buttons {
+    flex-direction: column;
+  }
+}

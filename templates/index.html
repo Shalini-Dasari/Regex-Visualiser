@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Regex Visualiser</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <!-- Include railroad.js and optional helper -->
+  <script src="{{ url_for('static', filename='js/railroad-diagrams/railroad.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/peggy.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/parse-tree.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/railroad-helper.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="left-nav">
+      <button id="theme-toggle-btn" aria-label="Toggle Theme">🌙</button>
+    </div>
+    <div class="right-nav">
+      <button class="nav-btn">Learn</button>
+    </div>
+  </div>
+
+  <!-- Centered Regex Card -->
+  <div class="center-container">
+    <div class="card-box">
+      <h1 class="title">RegVis</h1>
+      <input type="text" id="regex-input" placeholder="Enter your regex" />
+      <button id="check-btn">Check</button>
+      <div id="result-message"></div>
+
+      <div id="extra-buttons" class="hidden">
+        <button id="parse-btn">Parse Tree</button>
+        <button id="railroad-btn">Railroad</button>
+      </div>
+
+      <div id="railroad-container" class="hidden">
+        <h2>Railroad Diagram</h2>
+        <div id="diagram-area"></div>
+      </div>
+      
+      <div id="parse-tree-container" class="hidden">
+        <h2>Parse Tree</h2>
+        <div id="parse-tree-area"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

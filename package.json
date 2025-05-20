@@ -1,0 +1,12 @@
+{
+  "name": "regex-visualizer",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "python app.py"
+  },
+  "dependencies": {
+    "peggy": "^3.0.2",
+    "railroad-diagrams": "^1.0.0"
+  }
+}
